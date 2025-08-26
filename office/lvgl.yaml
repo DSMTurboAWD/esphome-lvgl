@@ -104,7 +104,6 @@ lvgl:
                   data:
                     entity_id: scene.office_evening
 
-
         # Office Dimmed Scene
         - button: 
             height: $button_height_single
