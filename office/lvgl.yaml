@@ -126,50 +126,6 @@ lvgl:
                   data:
                     entity_id: scene.office_dimmed
 
-        # 3d Printer
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: printer_power_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: printer_power_icon
-                  text: $printer
-              - label:
-                  align: bottom_left
-                  id: printer_power_label
-                  text: "Printer"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.office_3d_printer_power
-
-        # Filament Heater
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: filament_heater_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: filament_heater_icon
-                  text: $filament
-              - label:
-                  align: bottom_left
-                  id: filament_heater_label
-                  text: "Dryer"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.office_filament_heater_893b
-
         # Office Blind 100%
         - button: 
             height: $button_height_single
@@ -253,6 +209,51 @@ lvgl:
                   data:
                     entity_id: cover.office_blind
                     position: "0"
+
+
+        # 3d Printer
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: printer_power_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: printer_power_icon
+                  text: $printer
+              - label:
+                  align: bottom_left
+                  id: printer_power_label
+                  text: "Printer"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_3d_printer_power
+
+        # Filament Heater
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: filament_heater_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: filament_heater_icon
+                  text: $filament
+              - label:
+                  align: bottom_left
+                  id: filament_heater_label
+                  text: "Dryer"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_filament_heater_893b
 
         # Office Aircon
         - button: 
