@@ -148,25 +148,29 @@ lvgl:
                   data:
                     entity_id: switch.office_3d_printer_power
 
-        # Office Aircon
+        # Filament Heater
         - button: 
             height: $button_height_single
             checkable: true
-            id: office_aircon_button
+            id: filament_heater_button
             styles: control
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $aircon
+                  id: filament_heater_icon
+                  text: $filament
               - label:
                   align: bottom_left
-                  text: "Aircon"
+                  id: filament_heater_label
+                  text: "Dryer"
             on_click:
               - homeassistant.service:
-                  service: script.office_air_conditioner
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_filament_heater_893b
 
-        # Office Blind Open
+        # Office Blind 100%
         - button: 
             height: $button_height_single
             checkable: true
@@ -187,7 +191,49 @@ lvgl:
                     entity_id: cover.office_blind
                     position: "100"
 
-        # Office Blind Close
+        # Office Blind 66%
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_66_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_open
+              - label:
+                  align: bottom_left
+                  text: "Semi Open"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "66"
+
+        # Office Blind 33%
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_33_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_open
+              - label:
+                  align: bottom_left
+                  text: "Semi Closed"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "33"
+
+        # Office Blind 0%
         - button: 
             height: $button_height_single
             checkable: true
@@ -208,47 +254,23 @@ lvgl:
                     entity_id: cover.office_blind
                     position: "0"
 
-        # Office Blind 75%
+        # Office Aircon
         - button: 
             height: $button_height_single
             checkable: true
-            id: office_blind_75_button
+            id: office_aircon_button
             styles: control
             widgets:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $blinds_open
+                  text: $aircon
               - label:
                   align: bottom_left
-                  text: "75%"
+                  text: "Aircon"
             on_click:
               - homeassistant.service:
-                  service: cover.set_cover_position
-                  data:
-                    entity_id: cover.office_blind
-                    position: "75"
-
-        # Office Blind 50%
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: office_blind_50_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  text: $blinds_open
-              - label:
-                  align: bottom_left
-                  text: "50%"
-            on_click:
-              - homeassistant.service:
-                  service: cover.set_cover_position
-                  data:
-                    entity_id: cover.office_blind
-                    position: "50"
+                  service: script.office_air_conditioner
 
         # Battery Charger
         - button: 
@@ -265,31 +287,9 @@ lvgl:
               - label:
                   align: bottom_left
                   id: battery_charger_label
-                  text: "Battery"
+                  text: "Charger"
             on_click:
               - homeassistant.service:
                   service: switch.toggle
                   data:
                     entity_id: switch.d4c5
-
-        # Filament Heater
-        - button: 
-            height: $button_height_single
-            checkable: true
-            id: filament_heater_button
-            styles: control
-            widgets:
-              - label:
-                  text_font: $icon_font
-                  align: top_left
-                  id: filament_heater_icon
-                  text: $filament
-              - label:
-                  align: bottom_left
-                  id: filament_heater_label
-                  text: "Filament"
-            on_click:
-              - homeassistant.service:
-                  service: switch.toggle
-                  data:
-                    entity_id: switch.office_filament_heater_893b
