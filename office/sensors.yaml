@@ -105,7 +105,7 @@ binary_sensor:
     on_state:
       then:
         lvgl.widget.update:
-          id: printer_power_button
+          id: battery_charger_button
           state:
             checked: !lambda return x;
 
@@ -117,6 +117,6 @@ binary_sensor:
     on_state:
       then:
         lvgl.widget.update:
-          id: printer_power_button
+          id: filament_heater_button
           state:
             checked: !lambda return x;

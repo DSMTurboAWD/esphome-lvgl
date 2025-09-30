@@ -208,6 +208,48 @@ lvgl:
                     entity_id: cover.office_blind
                     position: "0"
 
+        # Office Blind 75%
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_75_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_open
+              - label:
+                  align: bottom_left
+                  text: "75%"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "75"
+
+        # Office Blind 50%
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: office_blind_50_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  text: $blinds_open
+              - label:
+                  align: bottom_left
+                  text: "50%"
+            on_click:
+              - homeassistant.service:
+                  service: cover.set_cover_position
+                  data:
+                    entity_id: cover.office_blind
+                    position: "50"
+
         # Battery Charger
         - button: 
             height: $button_height_single

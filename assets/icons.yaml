@@ -19,10 +19,8 @@ font:
       "\U000F1087",  # mdi-router-network
       "\U000F036B",  # mdi-message-video
       "\U000F0614",  # mdi-application-outline
-      "\U000F0079",  # mdi-battery
-      "\U000F0C0E",  # mdi-filament
-
-      
+      "\U000F089E",  # mdi-battery
+      "\U000F07DE",  # mdi-filament
       ]
 
 # Map icons to names
@@ -39,6 +37,6 @@ substitutions:
   network:        "\U000F1087"
   videocall:      "\U000F036B"
   application:    "\U000F0614"
-  battery:        "\U000F0079"
-  filament:       "\U000F0C0E"
+  battery:        "\U000F089E"
+  filament:       "\U000F07DE"
 
