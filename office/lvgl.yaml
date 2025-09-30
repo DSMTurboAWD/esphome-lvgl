@@ -207,3 +207,47 @@ lvgl:
                   data:
                     entity_id: cover.office_blind
                     position: "0"
+
+        # Battery Charger
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: battery_charger_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: battery_charger_icon
+                  text: $battery
+              - label:
+                  align: bottom_left
+                  id: battery_charger_label
+                  text: "Battery"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.d4c5
+
+        # Filament Heater
+        - button: 
+            height: $button_height_single
+            checkable: true
+            id: filament_heater_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: filament_heater_icon
+                  text: $filament
+              - label:
+                  align: bottom_left
+                  id: filament_heater_label
+                  text: "Filament"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.office_filament_heater_893b

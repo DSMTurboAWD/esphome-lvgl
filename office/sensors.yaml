@@ -96,3 +96,27 @@ binary_sensor:
           id: office_aircon_button
           state:
             checked: !lambda return x;
+
+  # Battery Charger
+  - platform: homeassistant
+    id: office_battery_charger
+    entity_id: switch.d4c5
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: printer_power_button
+          state:
+            checked: !lambda return x;
+
+  # Filament Heater 
+  - platform: homeassistant
+    id: office_filament_heater
+    entity_id: switch.office_filament_heater_893b
+    trigger_on_initial_state: true
+    on_state:
+      then:
+        lvgl.widget.update:
+          id: printer_power_button
+          state:
+            checked: !lambda return x;
