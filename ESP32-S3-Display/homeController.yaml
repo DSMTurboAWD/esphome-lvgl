@@ -1,9 +1,9 @@
 # ESP32-S3-Touch-LCD-7
 substitutions:
-  name: "your-device-name"
-  friendly_name: "Your Room Sensor"
-  room: "Your Room"
-  project: "Office"
+  name: "ws-esp32-s3-display"
+  friendly_name: "Central Controller"
+  room: "Living Room"
+  project: "WaveShare Integration"
   version: "1.0.0"
 
 # Wifi Setup
@@ -23,5 +23,6 @@ packages:
             assets/icons.yaml,
             theme/button.yaml,
             office/sensors.yaml,
-            office/lvgl.yaml]
+            office/lvgl.yaml
+            ]
     refresh: 1sec
